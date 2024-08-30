@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaMarkt-Clon</title>
+
+    <!-- ! Bootstrap HTML CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- ! Fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ! External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ! Navbar -->
+    <div class="navbar bg-kirmizi px-5 pt-3 pb-2">
+        <div class="d-lg-block d-none w-100 bg-kirmizi">
+            <div class="d-flex gap-3">
+                <p class="fw-bold m-0 mb-1 text-white fs-12 alt-cizgi">Kampanyalar</p>
+                <div class="d-flex gap-1">
+                    <i class="fa-solid fa-star text-white fs-12 pt-1"></i>
+                    <p class="fw-bold m-0 mb-1 text-white fs-12 alt-cizgi">MediaMarkt CLUB</p>
+                </div>
+                <p class="fw-bold m-0 mb-1 text-white fs-12 alt-cizgi">Kurumsal Satış</p>
+                <p class="fw-bold m-0 mb-1 text-white fs-12 alt-cizgi">Müşteri Hizmetleri</p>
+                <p class="fw-bold m-0 mb-1 text-white fs-12 alt-cizgi">Artı Hizmetler</p>
+            </div>
+        </div>
+        <div class="d-flex .full-width-container">
+            <div class="d-flex w-75 pt-lg-2">
+                <button class="btn d-lg-none d-flex align-items-center fs-18 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                    <i class="fa-solid fa-bars text-white"></i>
+                </button>
+                <img src="https://cms-images.mmst.eu/wgppmdcw3act/2cI20s4cNIDHaGy8pOljBt/0f5a7977bbbc08d7796c218ac93d85ff/MM_logo_white.svg?q=80" alt="" width="200px" class="me-3 logo">
+                <!-- ! Aynı Butondan 2 Tane var birisi lg üstünde none diğeri altında none -->
+                <button class="btn border border-2 border-white fw-bold text-white d-lg-block d-none me-3 w-30 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                    Tüm Kategoriler
+                </button>
+                <div class="d-flex bg-white rounded-3 full-width-container d-md-block d-none">
+                    <i class="fa-solid fa-magnifying-glass p-3 mt-1 fs-20 w-10"></i>
+                    <input type="text" placeholder="Ne Arıyorsunuz?" class="border-0 shadow-none outline-none rounded-3 w-80 py-3">
+                </div>
+            </div>
+            <div class="d-flex w-25 gap-1">
+                <button class="btn d-lg-block d-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <div class="d-flex">
+                        <div class="text-white fs-12">
+                            <p class="m-0 fs-18 fw-bold">Mağzalarımız</p>
+                            <p class="m-0 m-auto ms-3">MediaMarkt Balıkesir ...</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-down fs-12 text-white mt-3 ms-2"></i>
+                    </div>
+                </button>
+                <button class="btn border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight2">
+                    <i class="fa-regular fa-user fs-18 p-3 rounded-circle bg-white"></i>
+                </button>
+                <div class="cursor me-2">
+                    <i class="fa-solid fa-cart-shopping fs-18 p-3 rounded-circle bg-white mt-2"></i>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex bg-white rounded-3 full-width-container d-md-none mt-1">
+            <i class="fa-solid fa-magnifying-glass p-3 mt-1 fs-20 w-10"></i>
+            <input type="text" placeholder="Ne Arıyorsunuz?" class="border-0 shadow-none outline-none rounded-3 w-80 py-3">
+        </div>
+    </div>
+
+    <!-- ! Navbar ALtindaki Siyah Kisim -->
+    <div class="d-md-block d-none">
+        <div class="bg-black d-flex justify-content-evenly">
+            <p class="text-white m-0 fs-14 alt-cizgi py-2">Saat 14:00’e kadar sipariş verin aynı gün kargoda!</p>
+            <p class="text-white m-0 fs-14 alt-cizgi py-2">500 TL Üzeri Ücretsiz Kargo</p>
+            <p class="text-white m-0 fs-14 alt-cizgi py-2">MediaMarkt APP</p>
+        </div>
+    </div>
+    <div class="bg-black d-md-none">
+        <div class="d-flex justify-content-center">
+            <p class="text-white m-0 fs-14 alt-cizgi py-2">Saat 14:00’e kadar sipariş verin aynı gün kargoda!</p>
+        </div>
+    </div>
+
+    <!-- ! Alttaki İçerikler -->
+    <div id="carouselExampleAutoplaying" class="carousel slide mt-5 position-relative" data-bs-ride="carousel">
+        <div class="carousel-indicators position-absolute carousel-btn">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-black" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="bg-black"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" class="bg-black"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row w-75 m-auto">
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/4u6H4iN1cbmXDFapbiLsyB/74875dd038a8de863fda00214a230d52/Mobile__5_.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Web'e Özel
+                            </div>
+                            <h2 class="fw-bold mt-4">Sepette İndirimler!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row w-75 m-auto">
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row w-75 m-auto">
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border border-1 border-black rounded-3 h-500">
+                        <img src="https://cms-images.mmst.eu/wgppmdcw3act/1Gc1bPlM10qsY9OIT5SAWo/9ff78778655f7c7ca514d5da8246b77f/Mobile.jpg?q=88&w=658" alt="" width="100%" class="rounded-3">
+                        <div class="p-3">
+                            <div class="btn border border-2 border border-danger rounded-5 fs-12 fw-bold mt-2">
+                                Okula Dönüş
+                            </div>
+                            <h2 class="fw-bold mt-4">Okul ihtiyaçları sizde, teknolojiler bizde!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-black p-2 rounded-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-black p-2 rounded-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+      </div>
+    
+
+
+
+    <!-- ! Tüm Katagoriler Offcanvas -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+          <img src="https://cms-images.mmst.eu/wgppmdcw3act/3qXCKzMWHkpBxrvmwzVUky/1e34facb97738ce9a192314ed8f54113/MM_logo_red.svg?q=80" alt="" width="200px" class="mt-2">
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <hr>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Telefon</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Bilgisayar</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">TV, Görüntü ve Ses</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Aksesuar</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Foto & Kamera & Drone</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Beyaz Eşya</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Ev Aletleri & Yaşam</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Kişisel Bakım & Sağlık</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Spor & Oyun & Outdoor</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <div class="d-flex justify-content-between secenekler rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Markalar</p>
+            <i class="fa-solid fa-chevron-right mt-2 pt-1 fs-12 me-3"></i>
+          </div>
+          <hr class="my-4">
+          <div class="d-flex justify-content-between secenekler-2 rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">Markalar</p>
+          </div>
+          <div class="d-flex justify-content-between secenekler-2 rounded-3 mb-2">
+            <p class="fs-14 m-0 px-2 py-2 fw-bold">MediaTrend</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- ! Mağzalarımız Offcanvas -->
+    <div class="offcanvas offcanvas-end border-radius w-70" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <div>
+            <p class="fw-bold m-0 mb-2 fs-18">
+                Mağaza Seçin
+            </p>
+            <p class="m-0">
+                Bulmak istediğiniz mağaza için il seçimi yaparak arama yapabilirsiniz. Bu şekilde mağazadaki ürün bulunurluğunu da kontrol edebilirsiniz.
+            </p>
+            <div class="row mt-3">
+                <div class="col-10">
+                    <div class="border border-2 border-black rounded-3">
+                        <i class="fa-solid fa-magnifying-glass p-3 fs-18"></i>
+                        <input type="text" placeholder="İl adıyla arama yapın" class="p-2 border-0 shadow-none w-90">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="btn bg-black text-white h-75 pt-1 mt-2">Ara</div>
+                </div>
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+        <!-- ! Mağaza -->
+          <div class="px-3 py-2 border border-2 border-black rounded-3 mb-2">
+            <p class="fw-bold">MediaMarkt Balıkesir - Bandırma Liman AVM</p>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <p class="m-0">
+                    17 Eylül Mah. Gönen Yolu No:2/1 İç kapı No: Z/1 - 10200 Bandırma-Balıkesir
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-regular fa-clock mt-1"></i>
+                <p class="m-0">
+                    Açık - 22:00 saatinda kapanıyor
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-chevron-down mt-1 cursor"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl">
+                    Daha fazla göster
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <i class="fa-solid fa-chevron-right cursor mt-1 text-danger"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl alt-cizgi">
+                    Mağazaya git
+                </p>
+            </div>
+          </div>
+        <!-- ! Mağaza -->
+          <div class="px-3 py-2 border border-2 border-black rounded-3 mb-2">
+            <p class="fw-bold">MediaMarkt Bursa - Özdilek Park AVM</p>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <p class="m-0">
+                    Alaaddinbey Mah. İzmir Yolu Cad. 307 - 16285 Nilüfer-BURSA
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-regular fa-clock mt-1"></i>
+                <p class="m-0">
+                    Açık - 22:00 saatinda kapanıyor
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-chevron-down mt-1 cursor"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl">
+                    Daha fazla göster
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <i class="fa-solid fa-chevron-right cursor mt-1 text-danger"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl alt-cizgi">
+                    Mağazaya git
+                </p>
+            </div>
+          </div>
+        <!-- ! Mağaza -->
+          <div class="px-3 py-2 border border-2 border-black rounded-3 mb-2">
+            <p class="fw-bold">MediaMarkt Tekirdağ - Tekira AVM</p>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <p class="m-0">
+                    Tekirdag Tekira AVM Aydogdu Mah. No:186 - 59100 Süleymanpaşa-Tekirdağ
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-regular fa-clock mt-1"></i>
+                <p class="m-0">
+                    Açık - 22:00 saatinda kapanıyor
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-chevron-down mt-1 cursor"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl">
+                    Daha fazla göster
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <i class="fa-solid fa-chevron-right cursor mt-1 text-danger"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl alt-cizgi">
+                    Mağazaya git
+                </p>
+            </div>
+          </div>
+            <!-- ! Mağaza -->
+          <div class="px-3 py-2 border border-2 border-black rounded-3 mb-2">
+            <p class="fw-bold">MediaMarkt Balıkesir - 10 Burada AVM</p>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <p class="m-0">
+                    Gaziosmanpaşa Mah. 334. Sok. No: 4/A - 10100 Altıeylül-Balıkesir
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-regular fa-clock mt-1"></i>
+                <p class="m-0">
+                    Açık - 22:00 saatinda kapanıyor
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-chevron-down mt-1 cursor"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl">
+                    Daha fazla göster
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <i class="fa-solid fa-chevron-right cursor mt-1 text-danger"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl alt-cizgi">
+                    Mağazaya git
+                </p>
+            </div>
+          </div>
+            <!-- ! Mağaza -->
+          <div class="px-3 py-2 border border-2 border-black rounded-3 mb-2">
+            <p class="fw-bold">MediaMarkt Bursa - Korupark AVM</p>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <p class="m-0">
+                    Emek Adnan Menderes Mah., Mudanya Yolu 9.KM, Mudanya Cad., No:2 16140 - 16140 Osmangazi-Bursa
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-regular fa-clock mt-1"></i>
+                <p class="m-0">
+                    Açık - 22:00 saatinda kapanıyor
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-chevron-down mt-1 cursor"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl">
+                    Daha fazla göster
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <i class="fa-solid fa-chevron-right cursor mt-1 text-danger"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl alt-cizgi">
+                    Mağazaya git
+                </p>
+            </div>
+          </div>
+            <!-- ! Mağaza -->
+          <div class="px-3 py-2 border border-2 border-black rounded-3 mb-2">
+            <p class="fw-bold">MediaMarkt Bursa - Nilpark AVM</p>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <p class="m-0">
+                    Karaman Mah. İzmir Yolu Cad. No:90 - 16130 Nilüfer-Bursa
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-regular fa-clock mt-1"></i>
+                <p class="m-0">
+                    Açık - 22:00 saatinda kapanıyor
+                </p>
+            </div>
+            <div class="d-flex gap-2 mb-2">
+                <i class="fa-solid fa-chevron-down mt-1 cursor"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl">
+                    Daha fazla göster
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <i class="fa-solid fa-chevron-right cursor mt-1 text-danger"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl alt-cizgi">
+                    Mağazaya git
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+            <hr class="w-75 m-auto my-2">
+            <div class="h-100 px-5 pt-3">
+                <div class="d-flex justify-content-end">
+                    <div class="btn fw-bold bg-black text-white">Mağaza Seç</div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- ! User Offcanvas -->
+    <div class="offcanvas offcanvas-end w-offcanvas border-radius p-3" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRightLabel2">
+        <div class="offcanvas-header">
+            <div class="w-100">
+                <div class="btn fw-bold bg-black text-white w-100 mt-5">Giriş Yap</div>
+                <div class="btn text-black border border-2 border-black w-100 mt-3">Üye Ol</div>
+            </div>
+        <div class="mb-4">
+            <button type="button" class="btn-close ms-3 mb-5" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex gap-2 mb-5">
+                <i class="fa-solid fa-chevron-right cursor mt-1 text-danger"></i>
+                <p class="m-0 fw-bold cursor fs-14 mt-2pksl alt-cizgi">
+                    MediaMarkt Club-kartı ile kayıt olun
+                </p>
+            </div>
+            <div class="d-flex gap-2 my-4">
+                <i class="fa-solid fa-house-user cursor fs-25 mt-1 "></i>
+                <p class="m-0 cursor ms-2 fs-20">
+                    Profilim
+                </p>
+            </div>
+            <div class="d-flex gap-2 my-4 pt-1">
+                <i class="fa-regular fa-heart fs-25 mt-1 cursor"></i>
+                <p class="m-0 cursor ms-2 fs-20">
+                    Favorilerim
+                </p>
+            </div>
+            <hr class="w-100">
+            <div class="d-flex gap-2 my-4 pt-1">
+                <i class="fa-regular fa-credit-card fs-25 mt-1 cursor"></i>
+                <p class="m-0 cursor ms-2 fs-20">
+                    Siparişlerim
+                </p>
+            </div>
+        </div>
+      </div>
+
+    <!-- ! Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

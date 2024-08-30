@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-kirmizi{
+    background-color: #DF0000;
+}
+
+.fs-12{
+    font-size: 12px;
+}
+
+.alt-cizgi:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fs-14{
+    font-size: 14px;
+}
+
+.secenekler{
+    background-color: white;
+    cursor: pointer;
+}
+
+.secenekler:hover{
+    background-color: #F7F7F7;
+}
+
+.secenekler-2{
+    background-color: white;
+    cursor: pointer;
+}
+
+.secenekler-2:hover{
+    background-color: #F7F7F7;
+    text-decoration: underline;
+}
+
+.fs-18{
+    font-size: 18px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.w-70{
+    width: 650px !important;
+}
+
+.w-90{
+    width: 88% !important;
+}
+
+.cursor:hover{
+    cursor: pointer;
+}
+
+.mt-2pksl{
+    margin-top: 2px !important;
+}
+
+.alt-cizgi{
+    text-decoration: underline;
+}
+
+.alt-cizgi:hover{
+    text-decoration: none;
+}
+
+.h-100{
+    height: 100px !important;
+}
+
+.border-radius{
+    border-radius: 20px 0px 0px 20px !important;
+}
+
+.w-offcanvas{
+    width: 450px !important;
+}
+
+.fs-25{
+    font-size: 25px !important;
+}
+
+.fs-20{
+    font-size: 20px;
+}
+
+.full-width-container {
+    width: 100% !important;
+}
+
+.navbar{
+    display: block !important;
+}
+
+.w-30{
+    width: 300px;
+}
+
+.w-10{
+    width: 10% !important;
+}
+
+.w-20{
+    width: 90% !important;
+}
+
+.h-500{
+    height: 400px;
+}
+
+.carousel-btn{
+    left: 0;
+    top: 410px;
+    display: block;
+}
+
+.carousel-btn2{
+    right: 30px;
+    top: 410px;
+    display: block;
+}
+
+@media screen and (max-width:500px) {
+    .logo{
+        width: 150px !important;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .logo{
+        width: 100px !important;
+    }
+}
